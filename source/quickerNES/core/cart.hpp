@@ -74,8 +74,6 @@ class Cart
       return "Unsupported console type";
 
     int mapper_code = (h.flags2 & 0xF0) | ((h.flags >> 4) & 0x0F);
-
-
     int submapper_code = 0;
     if ((h.flags2 & 0x0C) == 0x08)
     {
