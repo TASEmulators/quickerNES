@@ -73,7 +73,9 @@ class Cart
     if (h.flags2 & 0x03)
       return "Unsupported console type";
 
-	int mapper_code = (h.flags2 & 0xF0) | ((h.flags >> 4) & 0x0F);
+    int mapper_code = (h.flags2 & 0xF0) | ((h.flags >> 4) & 0x0F);
+
+
     int submapper_code = 0;
     if ((h.flags2 & 0x0C) == 0x08)
     {
@@ -81,7 +83,9 @@ class Cart
       submapper_code = (h.ex_mapper >> 4) & 0xF;
     }
 
-    // printf("[QuickerNES] Cart Mapper Info: Mapper: %d - Submapper: %d\n", mapper_code, submapper_code);
+    #ifdef QUICKERNES_PRINT_CART_INFO
+    printf("[QuickerNES] Cart Mapper Info: Mapper: %d - Submapper: %d\n", mapper_code, submapper_code);
+    #endif
 
     // check if NES 2.0 is present
     if ((h.flags2 & 0x0C) == 0x08)
