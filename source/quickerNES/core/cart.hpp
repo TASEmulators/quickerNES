@@ -81,7 +81,7 @@ class Cart
       submapper_code = (h.ex_mapper >> 4) & 0xF;
     }
 
-    #ifdef QUICKERNES_PRINT_CART_INFO
+    #ifdef _QUICKERNES_PRINT_CART_INFO
     printf("[QuickerNES] Cart Mapper Info: Mapper: %d - Submapper: %d\n", mapper_code, submapper_code);
     #endif
 
